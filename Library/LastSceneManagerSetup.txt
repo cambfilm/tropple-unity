@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/two player tropple.unity
+  isLoaded: 1
+  isActive: 1
