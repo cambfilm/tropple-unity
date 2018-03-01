@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 04872c654ba8822419916d646b134c76
+timeCreated: 1518548449
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - deck: {fileID: 1611868138112570, guid: abcc97e63faf0654ab179ae1276d5904, type: 2}
+  - deckPlacement: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
