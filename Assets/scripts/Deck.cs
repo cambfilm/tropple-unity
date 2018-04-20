@@ -28,12 +28,34 @@ namespace Gnogger_Tropple.Classes
             deck = new GameObject();
             cardsDealt = new List<GameObject>();
 
-            GameObject[] types = { cardX, cardY, cardZ, cardD, cardO }; //types of cards
+            GameObject[] typesCommon = { cardX, cardY };
+            GameObject[] typesUncommon = { cardZ };
+            GameObject[] typesRare = { cardD, cardO };
 
-            foreach (GameObject type in types) //creates 20 cards of each type
+            foreach (GameObject type in typesCommon) //creates 20 cards of each type
+            {
+
+                for (int i = 0; i < 25; i++)
+                {
+                    type.GetComponent<Card>().Type = type.ToString().Substring(4); // adds type to Card.Type
+                    Cards.Add(type);
+                }
+            }
+
+            foreach (GameObject type in typesUncommon) //creates 20 cards of each type
             {
 
                 for (int i = 0; i < 20; i++)
+                {
+                    type.GetComponent<Card>().Type = type.ToString().Substring(4); // adds type to Card.Type
+                    Cards.Add(type);
+                }
+            }
+
+            foreach (GameObject type in typesRare) //creates 20 cards of each type
+            {
+
+                for (int i = 0; i < 10; i++)
                 {
                     type.GetComponent<Card>().Type = type.ToString().Substring(4); // adds type to Card.Type
                     Cards.Add(type);

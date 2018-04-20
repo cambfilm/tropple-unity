@@ -67,7 +67,7 @@ namespace Assets.scripts
 
         //public Deck Deck { get; }
 
-
+        public bool IsPaused { get; set; }
 
         //public bool IsPlayerOnesTurn { get => PlayerOne.IsCurrentPlayer; }
         //public bool IsPlayerTwosTurn { get => PlayerTwo.IsCurrentPlayer; }
@@ -137,6 +137,11 @@ namespace Assets.scripts
 
             Message.text = message;
 
+        }
+
+        public void SetMessage(string message)
+        {
+            this.message = message;
         }
 
         public void PlayersTurn(Player player)
@@ -288,7 +293,12 @@ namespace Assets.scripts
             bool playable = true;
             string cardType = card.GetComponent<Card>().Type;
 
-            if (cardType == "Z" && CurrentPlayer.TotalCardsInPlay == 0)
+            if (IsPaused)
+            {
+                playable = false;
+                message = "Choose a card to remove";
+            }
+            else if (cardType == "Z" && CurrentPlayer.TotalCardsInPlay == 0)
             {
                 playable = false;
                 message = "'" + card.GetComponent<Card>().Type + "' is not a valid play";

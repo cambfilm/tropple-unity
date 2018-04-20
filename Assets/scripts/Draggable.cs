@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Gnogger_Tropple.Classes;
+using Assets.scripts;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -63,12 +64,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnEndDrag(PointerEventData eventD)
     { 
-        transform.SetParent(parentOriginal);
-        //transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
-        Destroy(placeholder);
-
-
+            transform.SetParent(parentOriginal);
+            //transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
+            GetComponent<CanvasGroup>().blocksRaycasts = true;
+            Destroy(placeholder);
     }
 
 }

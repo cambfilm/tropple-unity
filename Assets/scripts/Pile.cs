@@ -88,6 +88,11 @@ namespace Gnogger_Tropple.Classes
         public void AddToPile(Card card)
         {
             EventManager.TriggerEvent("playCard");
+            if (card.Type == "Z")
+            {
+                EventManager.TriggerEvent("playZ");
+            }
+
             card.IsInPile = true;
 
             if (PileFull)

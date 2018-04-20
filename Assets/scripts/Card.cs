@@ -16,7 +16,7 @@ public class Card : MonoBehaviour
 
     public bool IsFaceUp { get; set; }
 
-    public bool IsPlayable { get { return gameObject.GetComponentInParent<Game>().GetPlayability(gameObject); } }
+    public bool IsPlayable { get { return gameObject.GetComponentInParent<Game>().GetPlayability(gameObject) && !gameObject.GetComponentInParent<Game>().IsPaused; } }
 
     public Card() { }
 
@@ -38,6 +38,7 @@ public class Card : MonoBehaviour
 
         return type;
     }
+
 
 }
 

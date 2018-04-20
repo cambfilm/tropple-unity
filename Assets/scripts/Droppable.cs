@@ -19,7 +19,7 @@ public class Droppable : MonoBehaviour, IDropHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-        if (d != null && d.placeholderParent == transform)
+        if (d != null && d.placeholderParent == transform) 
         {
             d.placeholderParent = d.parentOriginal;
         }
@@ -29,7 +29,9 @@ public class Droppable : MonoBehaviour, IDropHandler
     {
         Draggable d = data.pointerDrag.GetComponent<Draggable>();
 
-        if (d != null && gameObject.GetComponentInParent<Player>().PlayCount > 0 && d.gameObject.GetComponentInParent<Pile>() == null && d.gameObject.GetComponent<Card>().IsPlayable)
+        if (d != null && gameObject.GetComponentInParent<Player>().PlayCount > 0 
+            && d.gameObject.GetComponentInParent<Pile>() == null 
+            && d.gameObject.GetComponent<Card>().IsPlayable)
         {
             DroppedInPile(data);
             d.parentOriginal = transform;
